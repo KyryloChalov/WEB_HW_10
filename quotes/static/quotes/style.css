@@ -1,0 +1,11 @@
+.main-page {
+    display: flex;
+}
+
+.main-page--quotes {
+    flex-basis: 75%
+}
+
+.main-page--top-tags {
+    flex-basis: 25%
+}

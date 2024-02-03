@@ -1,0 +1,10 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+    <h1>{{ tag.name }}</h1>
+    <div>
+        {% for quote in tag.quote_set.all %}
+            {% include "quotes/components/quote.html" with quote=quote %}
+        {% endfor %}
+    </div>
+{% endblock content %}

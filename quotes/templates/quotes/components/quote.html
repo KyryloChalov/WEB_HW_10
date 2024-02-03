@@ -1,0 +1,14 @@
+<blockquote>
+    {{quote.quote}}
+    <footer>
+        <cite>
+            by <small>{{quote.author.fullname}}</small>
+            <a href="{% url 'authors:details' quote.author.id %}">(about)</a>
+        </cite>
+        <div>
+            {% for tag in quote.tags.all %}
+            <a class="contrast" href="{% url 'quotes:tag' tag.id %}">{{tag.name}}</a>
+            {% endfor %}
+        </div>
+    </footer>
+</blockquote>
