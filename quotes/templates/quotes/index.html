@@ -10,26 +10,30 @@
             <div class="pagination">
                 <span class="step-links">
                     {% if page_obj.has_previous %}
-                        <a href="?page=1">&laquo; first</a>
-                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        <a href="?page=1">&laquo; first </a>
+                        <span>&nbsp;&nbsp;</span>
+                        <a href="?page={{ page_obj.previous_page_number }}"> previous </a>
+                        <span>&nbsp;&nbsp;</span>
                     {% endif %}
 
                     <span class="current">
-                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                     </span>
-
+                    
                     {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">next</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        <span>&nbsp;&nbsp;</span>
+                        <a href="?page={{ page_obj.next_page_number }}"> next </a>
+                        <span>&nbsp;&nbsp;</span>
+                        <a href="?page={{ page_obj.paginator.num_pages }}"> last &raquo;</a>
                     {% endif %}
                 </span>
             </div>
         </div>
-        <div class="main-page--top-tags">
-            <h2>Top tags</h2>
+        {% comment %} <div class="main-page--top-tags">
+            <h3>Top 10 tags</h3>
             {% for tag in top_tags %}
-            <a class="contrast" href="{% url 'quotes:tag' tag.id %}">{{tag.name}}</a>
+                <a class="contrast" href="{% url 'quotes:tag' tag.id %}">{{tag.name}}</a>
             {% endfor %}
-        </div>
+        </div> {% endcomment %}
     </div>
 {% endblock content %}

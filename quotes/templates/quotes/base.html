@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Quotes information</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <title>Quotes - Homework 10</title>
+    {% comment %} <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" /> {% endcomment %}
+    <link rel="stylesheet" href="/css/pico.min.css" />
+    {% comment %} <link rel="stylesheet" href="/css/main.css" /> {% endcomment %}
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'quotes/style.css' %}">
 </head>
 <body>
 <main class="container">
-    <nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
+    <nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 10px">
         <ul>
             <li><a href="/" role="button">Quotes app</a></li>
         </ul>
@@ -22,8 +25,8 @@
             </ul>
         {% else %}
             <ul>
-                <li><a href="{% url 'users:registration' %}" role="button">Sign Up</a></li>
                 <li><a href="{% url 'users:login' %}" role="button">Login</a></li>
+                <li><a href="{% url 'users:registration' %}" role="button">Registration</a></li>
             </ul>
         {% endif %}
     </nav>
