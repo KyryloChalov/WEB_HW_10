@@ -10,30 +10,36 @@
             <div class="pagination">
                 <span class="step-links">
                     {% if page_obj.has_previous %}
-                        <a href="?page=1">&laquo; first </a>
+                        <a href="?page=1">&laquo; first</a>
                         <span>&nbsp;&nbsp;</span>
-                        <a href="?page={{ page_obj.previous_page_number }}"> previous </a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
                         <span>&nbsp;&nbsp;</span>
                     {% endif %}
 
                     <span class="current">
                         Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                     </span>
-                    
+
                     {% if page_obj.has_next %}
                         <span>&nbsp;&nbsp;</span>
-                        <a href="?page={{ page_obj.next_page_number }}"> next </a>
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
                         <span>&nbsp;&nbsp;</span>
-                        <a href="?page={{ page_obj.paginator.num_pages }}"> last &raquo;</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                     {% endif %}
                 </span>
             </div>
         </div>
-        {% comment %} <div class="main-page--top-tags">
-            <h3>Top 10 tags</h3>
-            {% for tag in top_tags %}
-                <a class="contrast" href="{% url 'quotes:tag' tag.id %}">{{tag.name}}</a>
-            {% endfor %}
-        </div> {% endcomment %}
+        <span style="margin-top: 10px; padding-top: 10px">
+            <div class="main-page--top-tags">
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;Top 10 tags</h3>
+                {% for tag in top_tags %}
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                    <span style="padding-bottom: 4px; padding-left: 16px; border-left: 2px solid">
+                        <a class="contrast" href="{% url 'quotes:tag' tag.id %}">{{tag.name}}</a><br>
+                    </span>
+                    {% endfor %}
+            </div>
+        </span>
     </div>
 {% endblock content %}

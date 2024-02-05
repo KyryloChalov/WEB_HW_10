@@ -1,7 +1,7 @@
 {% extends "quotes/base.html" %}
 
 {% block content %}
-    <h3>{{ tag.name }}</h3>
+    <h1>{{ tag.name }}</h1>
     <div>
         {% for quote in tag.quote_set.all %}
             {% include "quotes/components/quote.html" with quote=quote %}
