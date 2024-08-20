@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "hw-10"
-version = "0.1.0"
+name = "masssage_4"
+version = "4.1.0"
 description = ""
 authors = ["KyryloChalov <ks7977166@gmail.com>"]
 readme = "README.md"
